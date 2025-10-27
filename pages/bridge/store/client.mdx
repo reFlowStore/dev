@@ -1,80 +1,85 @@
-# Cache Client
+# Store Client
 
 ## PlayerId
 
-Cached version of PlayerId()
+Stored version of PlayerId()
 
 ```lua
-Cache.PlayerId
+Store.PlayerId
 ```
+
 returns: `number` | `boolean`
 
 ## ServerId
 
-Cached version of GetPlayerServerId()
+Stored version of GetPlayerServerId()
 
 ```lua
-Cache.ServerId
+Store.ServerId
 ```
+
 returns: `number` | `boolean`
 
 ## Ped
 
-Cached version of PlayerPedId()
+Stored version of PlayerPedId()
 
 ```lua
-Cache.Ped
+Store.Ped
 ```
+
 returns: `number` | `boolean`
 
 ## Vehicle
 
-Cached version of GetVehiclePedIsIn()
+Stored version of GetVehiclePedIsIn()
 
 ```lua
-Cache.Vehicle
+Store.Vehicle
 ```
+
 returns: `number` | `boolean`
 
 ## Weapon
 
-Cached version of GetCurrentPedWeapon()
+Stored version of GetCurrentPedWeapon()
 
-```lua 
-Cache.Weapon
+```lua
+Store.Weapon
 ```
+
 returns: `number` | `boolean`
 
 ## Set
 
-Register custom cache key/value pair this will trigger the cache event handler when it's registered and updated
+Register custom Store key/value pair this will trigger the Store event handler when it's registered and updated
 
 ```lua
-Cache.Set(key, value)
+Store.Set(key, value)
 ```
 
 - key: `string`
 - value: `any`
 
 ```lua
-Cache.Set("Test", "My Value")
+Store.Set("Test", "My Value")
 
-print(Cache.Test)
+print(Store.Test)
 ```
 
 ## On
 
-Register cache event handler that triggers when a cached value is registered or updated
+Register Store event handler that triggers when a Stored value is registered or updated
 
 ```lua
-Cache.On(key, cb)
+Store.On(key, cb)
 ```
 
 - key: `string`
 - cb: `function(value: any, oldvalue: any)`
 
 ```lua
-Cache.On("Weapon", function(value, oldvalue)
+Store.On("Weapon", function(value, oldvalue)
     if value then
         print("Weapon Equipped", value)
     else
@@ -82,7 +87,7 @@ Cache.On("Weapon", function(value, oldvalue)
     end
 end)
 
-Cache.On("Vehicle", function(value, oldvalue)
+Store.On("Vehicle", function(value, oldvalue)
     if value then
         print("Entered Vehicle", value)
     else

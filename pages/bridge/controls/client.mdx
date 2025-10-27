@@ -1,0 +1,63 @@
+import { Tab, Tabs } from 'nextra-theme-docs';
+
+# Controls Client
+
+## Disable
+
+Disable Specific Controls
+
+```lua
+Controls.Disable(controls)
+```
+
+- controls: `number` | `number[]`
+
+```lua
+Controls.Disable(24)
+
+Controls.Disable({ 24, 26 })
+```
+
+## Enable
+
+Enable Specific Controls
+
+```lua
+Controls.Enable(controls)
+```
+
+- controls: `number` | `number[]`
+
+```lua
+Controls.Enable(24)
+
+Controls.Enable({ 24, 26 })
+```
+
+## Disable All
+
+Disable All Controls
+
+```lua
+Controls.DisableAll()
+```
+
+## Enable All
+
+Enable All Controls
+
+```lua
+Controls.EnableAll()
+```
+
+## Disable Frontend
+
+```lua
+Controls.DisableFrontend()
+```
+
+## Enable Frontend
+
+```lua
+Controls.EnableFrontend()
+```
